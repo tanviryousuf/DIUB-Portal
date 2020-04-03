@@ -1,0 +1,85 @@
+﻿@model IEnumerable<DIUB.Models.Tbl_Borrow>
+
+@{
+    ViewBag.Title = "Borrower";
+    Layout = "~/Views/Shared/_LibraryLayout.cshtml";
+}
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BorrowID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BorrowDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReturnBookDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Penalty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PenaltyPaid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Due)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsSubmitted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BorrowID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BorrowDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeacherID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReturnBookDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Penalty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PenaltyPaid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Due)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsSubmitted)
+        </td>
+        <td>
+            @Html.ActionLink("Update", "ReturnBook", new {  id=item.BorrowID  }) 
+           
+        </td>
+    </tr>
+}
+
+</table>

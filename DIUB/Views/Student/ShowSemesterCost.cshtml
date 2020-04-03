@@ -1,0 +1,149 @@
+﻿@model DIUB.Models.Tbl_SemesterCost
+
+@{
+    ViewBag.Title = "ShowSemesterCost";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SemesterCostID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SemesterCostID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SemesterIID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SemesterIID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreditTaken)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreditTaken)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdmissionFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdmissionFee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputerLab)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputerLab)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScienceLab)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScienceLab)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LanguageLab)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LanguageLab)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Studio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Studio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Development)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Development)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Miscellaneous)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Miscellaneous)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreviousDue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreviousDue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AmountPaid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmountPaid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Due)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Due)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentID)
+        </dd>
+
+    </dl>
+
+   
+        <div class="form-actions no-color">
+           
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    
+</div>

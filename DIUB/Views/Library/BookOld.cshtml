@@ -1,0 +1,71 @@
+﻿@model IEnumerable<DIUB.Models.Tbl_Book>
+
+@{
+    ViewBag.Title = "BookOld";
+    Layout = "~/Views/Shared/_LibraryLayout.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuyingPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuyingDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookImage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuyingPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuyingDate)
+        </td>
+        <td>
+            
+            @Html.ActionLink("Delete", "Delete", new {  id=item.BookID })
+        </td>
+    </tr>
+}
+
+</table>

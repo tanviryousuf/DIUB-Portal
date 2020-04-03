@@ -1,0 +1,42 @@
+﻿@model DIUB.Models.RegistrationViewPage
+@using PagedList;
+@using PagedList.Mvc;
+@{
+                /**/
+
+                ViewBag.Title = "RegistaredShow";
+                Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+<div class="row product-container">
+    @foreach (var item in Model.ListOfProducts)
+    {
+        <div class="col-md-3 col-sm-3 col-xs-4" style="margin-bottom:8px">
+            <div class="thumbnail product-item" style="height:250px;width:100%">
+                <div class="caption">
+                    <h5> @item.SubjectName</h5>
+                    <p>@item.Tbl_Teacher1.FirstName @item.Tbl_Teacher1.LastName</p>
+
+                    <p>@item.Day1 : @item.ClassStart-@item.ClassStart</p>
+                    <p>@item.Day2 : @item.ClassStart2-@item.ClassStart2</p>
+                   
+                    <div class="product-item-badge">
+                        @if (item.IsValid != true)
+                        {
+                            <p> Invalid</p>
+                        }
+                        else
+                        {
+                            <p>:valid</p>
+                        }
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+
+

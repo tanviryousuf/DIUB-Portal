@@ -1,0 +1,48 @@
+﻿@model DIUB.Models.Tbl_Accounts1
+
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>@ViewBag.Title - DIUB Portal</title>
+    <link href="~/Content/LogStyle.css" rel="stylesheet" />
+</head>
+<body>
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+
+
+       
+        <div class="login-page">
+            <div class="form">
+                @using (Html.BeginForm())
+                {
+                <form class="login-form">
+                    <input type="text" name="User" placeholder="username" />
+                    <input type="password" name="Pass" placeholder="password" />
+                    <button type="submit" vlaue="Login">login</button>
+                    @if (ViewBag.Message != null)
+                    {
+                        <p>@ViewBag.Message</p>
+                    }
+                    <p class="message"> <a href="#">Forget Your PassWord?</a></p>
+
+                </form>
+                }
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿@model DIUB.Models.BookIndexViewModel
+@using PagedList;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LibraryLayout.cshtml";
+}
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h2>Populer Books <small>Random</small></h2>
+        </div>
+    </div>
+</div>
+
+<div class="row product-container">
+    @foreach (var item in Model.ListOfProducts)
+    {
+        <div class="col-md-3 col-sm-3 col-xs-4" style="margin-bottom:8px">
+            <div class="thumbnail product-item" style="height:250px;width:100%">
+
+                <img class="img-responsive" title="Click to View Product detail"
+                     style="cursor:pointer;height:120px;width:80%"
+                     src="../Books/@item.BookImage" />
+
+                <div class="caption">
+                    <h5> @item.BookName</h5>
+                    <p>@item.Description </p>
+
+                    @if (item.Quantity > 0)
+                    {
+                        
+
+                        <p>Available</p>
+                    }
+
+                    else
+                    {
+                        <p>Not Available</p>
+                    }
+
+                    <div class="product-item-badge">
+                       @{ 
+                           DateTime d1 =  DateTime.Now;
+                           DateTime d2 =(DateTime)item.BuyingDate;
+                           int val = DateTime.Compare(d1, d2);
+                       }
+                        @if (val>15)
+                        {
+                            <p>Old</p>
+                        }
+                        else
+                        {
+                            <p>New</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+<div class="container">
+    @Html.PagedListPager(Model.ListOfProducts, page => Url.Action("Index", new { page, search = Request.QueryString["search"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayItemSliceAndTotal = true })
+</div>

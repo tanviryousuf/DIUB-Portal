@@ -1,0 +1,58 @@
+﻿@model IEnumerable<DIUB.Models.Tbl_PreSubjectDetails>
+
+@{
+    ViewBag.Title = "SubjectConfirm";
+    Layout = "~/Views/Shared/_DirectorLayout.cshtml";
+}
+
+<h2>SubjectConfirm</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SubjectID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubjectName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Credit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsLabExist)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubjectID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubjectName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Credit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsLabExist)
+        </td>
+        <td>
+            @Html.ActionLink("Confirm", "ConfirmSubject", new {  id=item.SubjectID}) |
+            @Html.ActionLink("Details", "SubjectDetails", new { id = item.SubjectID }) |
+            @Html.ActionLink("Cancel", "CancelSubject ", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

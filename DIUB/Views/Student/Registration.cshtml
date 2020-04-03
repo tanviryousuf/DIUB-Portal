@@ -1,0 +1,83 @@
+﻿@model IEnumerable<DIUB.Models.Tbl_SectionDistribution>
+
+
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<h2>Registration</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Subject Name
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.SectionName)
+        </th>
+        <th>
+            Available/@Html.DisplayNameFor(model => model.Capacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Day1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassStart)-@Html.DisplayNameFor(model => model.ClassEnd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Day2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassStart2)-@Html.DisplayNameFor(model => model.ClassEnd2)
+        </th>
+        <th>
+            Department
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.Tbl_SubjectDetails.SubjectName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.SectionName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Available)/@Html.DisplayFor(modelItem => item.Capacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassStart) - @Html.DisplayFor(modelItem => item.ClassEnd)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Day2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassStart2) - @Html.DisplayFor(modelItem => item.ClassEnd2)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_Department.DepartmentName)
+            </td>
+            <td>
+                @using (Html.BeginForm("AddCart", "Student", new { sectionId = item.SectionID }, FormMethod.Post))
+                {
+                <button type="submit" class="pull-right">Add</button>
+                }
+                @Html.ActionLink("Add", "RegistrationConfirm", new { id = item.SectionID, did = item.SemesterID }) 
+
+</tr>
+    }
+
+</table>

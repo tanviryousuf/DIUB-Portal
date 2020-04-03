@@ -1,0 +1,293 @@
+﻿
+@{
+    ViewBag.Title = "ApiClient";
+}
+
+<h2>Productsshow</h2>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<div>
+    <table id="tab2" width="300px" border="1">
+        <tr>
+            
+            <th>StudentID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>BirthDate</th>
+            <th>Department ID</th>
+
+            <th>Father Name</th>
+            <th>Mother Name</th>
+            <th>Present Address</th>
+            <th>Permanent Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Sex</th>
+            <th>Nationality</th>
+            <th>Regligion</th>
+
+            <th>Password</th>
+
+
+
+        </tr>
+
+    </table>
+    
+    ID: <input type="text" name="StudentID" id="StudentID" value="" /><br />
+    First Name : <input type="text" name="FirstName" id="FirstName" value="" /><br />
+    Last Name: <input type="text" name="LastName" id="LastName" value="" /><br />
+    BiirthDate : <input type="date" name="BirthDate" id="BirthDate" value="" /><br />
+    Department ID: <input type="text" name="DepartmentID" id="DepartmentID" value="" /><br />
+    Father Name: <input type="text" name="FatherName" id="FatherName" value="" /><br />
+    Mother Name : <input type="text" name="MotherName" id="MotherName" value="" /><br />
+    Present Address: <input type="text" name="PresentAddress" id="PresentAddress" value="" /><br />
+    Permanent Address : <input type="text" name="PermanentAddress" id="PermanentAddress" value="" /><br />
+    Phone: <input type="text" name="Phone" id="Phone" value="" /><br />
+    Email: <input type="text" name="Email" id="Email" value="" /><br />
+    Sex : <input type="text" name="Sex" id="Sex" value="" /><br />
+    Nationality: <input type="text" name="Nationality" id="Nationality" value="" /><br />
+    Religion : <input type="text" name="Religion" id="Religion" value="" /><br />
+    Marital Status: <input type="text" name="MaritalStatus" id="MaritalStatus" value="" /><br />
+    Blood Group: <input type="text" name="BloodGroup" id="BloodGroup" value="" /><br />
+    Admission Date : <input type="date" name="AdmissionDate" id="AdmissionDate" value="" /><br />
+    Documents Given: <input type="text" name="DocumentsGiven" id="DocumentsGiven" value="" /><br />
+    Password : <input type="password" name="Password" id="Password" value="" /><br />
+    Picture: <input type="image" name="Picture" id="Picture" value="" /><br />
+    type:  <input type="text" name="Type" id="Type" value="" /><br />
+
+
+    <input type="button" name="bt4" id="btn4" value="Add Student " />
+    <input type="button" name="btn5" id="btn5" value="Delete " />
+
+    <input type="button" name="btn6" id="btn6" value="Update  " />
+
+</div>
+
+<script>
+    $(document).ready(function () {
+
+
+        $("#tab2").css("display", "none");
+        $.getJSON("/DIUBAPI/PreStudents/", function (data) {
+            $("#tab1").css("display", "block");
+            $.each(data, function (key, val) {
+                $("<tr><td>" + val.StudentID + "</td><td>" + val.FirstName + "</td><td>" + val.LastName + "</td><td>" +
+                    val.BirthDate + "</td><td>" + val.DepartmentID + "</td><td>" + val.FatherName +
+                    "</td><td>" + val.MotherName + "</td><td>" + val.PresentAddress + "</td><td>" +
+                    val.PermanentAddress + "</td><td>" + val.Phone + "</td><td>" + val.Email +
+                    "</td><td>" + val.Sex + "</td><td>" + val.Nationality + "</td><td>" + val.Religion +
+                    "</td><td>" + val.Password +"</td></tr>").appendTo($("#tab2"));
+
+
+            })
+        })
+
+    //POST
+    $("#btn4").click(function () {
+        var StudentID = $("#StudentID").val();
+        var FirstName = $("#FirstName").val();
+        var LastName = $("#LastName").val();
+        var BirthDate = $("#BirthDate").val();
+        var DepartmentID = $("#DepartmentID").val();
+        var FatherName = $("#FatherName").val();
+        var MotherName = $("#MotherName").val();
+        var PresentAddress = $("#PresentAddress").val();
+        var PermanentAddress = $("#PermanentAddress").val();
+        var Phone = $("#Phone").val();
+        var Email = $("#Email").val();
+        var Sex = $("#Sex").val();
+        var Nationality = $("#Nationality").val();
+        var Religion = $("#Religion").val();
+        var password = $("#Password").val();
+        
+       
+           
+           
+        $.ajax({
+
+            type: "POST",
+
+            contentType: "application/json;charset=utf-8",
+
+            url: "/DIUBAPI/PreStudents/",
+
+            data: JSON.stringify({
+
+
+
+                 StudentID = $("#StudentID").val(),
+                    FirstName = $("#FirstName").val(),
+                 LastName = $("#LastName").val(),
+                 BirthDate = $("#BirthDate").val(),
+                 DepartmentID = $("#DepartmentID").val(),
+                 FatherName = $("#FatherName").val(),
+                 MotherName = $("#MotherName").val(),
+                 PresentAddress = $("#PresentAddress").val(),
+                PermanentAddress = $("#PermanentAddress").val(),
+                 Phone = $("#Phone").val(),
+                 Email = $("#Email").val(),
+                 Sex = $("#Sex").val(),
+                 Nationality = $("#Nationality").val(),
+                 Religion = $("#Religion").val(),
+                 password = $("#Password").val(),
+
+
+
+
+
+            }),
+
+            dataType: "JSON",
+
+            success: function (data) {
+                $("#tab2").find("tr:gt(0)").remove();
+                $.getJSON("/DIUBAPI/PreStudents/", function (data) {
+                    $("#tab2").css("display", "block");
+                    $.each(data, function (key, val) {
+                        $("<tr><td>" + val.StudentID + "</td><td>" + val.FirstName + "</td><td>" + val.LastName + "</td><td>" +
+                            val.BirthDate + "</td><td>" + val.DepartmentID + "</td><td>" + val.FatherName +
+                            "</td><td>" + val.MotherName + "</td><td>" + val.PresentAddress + "</td><td>" +
+                            val.PermanentAddress + "</td><td>" + val.Phone + "</td><td>" + val.Email +
+                            "</td><td>" + val.Sex + "</td><td>" + val.Nationality + "</td><td>" + val.Religion +
+                            "</td><td>" + val.Password + "</td></tr>").appendTo($("#tab2"));
+
+
+                    })
+
+                })
+
+
+
+            }
+        });
+
+
+    })
+    //Delete
+    $("#btn5").click(function () {
+        var StudentID = $("#StudentID").val();
+
+        $.ajax({
+
+            type: "DELETE",
+
+            contentType: "application/json;charset=utf-8",
+
+            url: "/DIUBAPI/PreStudents/" + $("#StudentID").val(),
+
+            data: JSON.stringify({
+
+
+
+                name: $("#StudentID").val(),
+
+
+
+
+
+            }),
+
+            dataType: "JSON",
+
+            success: function (data) {
+                $("#tab2").find("tr:gt(0)").remove();
+                $.getJSON("/DIUBAPI/PreStudents/", function (data) {
+                    $("#tab2").css("display", "block");
+                    $.each(data, function (key, val) {
+                        $("<tr><td>" + val.StudentID + "</td><td>" + val.FirstName + "</td><td>" + val.LastName + "</td><td>" +
+                            val.BirthDate + "</td><td>" + val.DepartmentID + "</td><td>" + val.FatherName +
+                            "</td><td>" + val.MotherName + "</td><td>" + val.PresentAddress + "</td><td>" +
+                            val.PermanentAddress + "</td><td>" + val.Phone + "</td><td>" + val.Email +
+                            "</td><td>" + val.Sex + "</td><td>" + val.Nationality + "</td><td>" + val.Religion +
+                            "</td><td>" + val.Password + "</td></tr>").appendTo($("#tab2"));
+
+
+                    })
+
+                })
+
+
+
+            }
+        });
+
+
+    })
+
+    //Update
+    $("#btn6").click(function () {
+        var StudentID = $("#StudentID").val();
+        var FirstName = $("#FirstName").val();
+        var LastName = $("#LastName").val();
+        var BirthDate = $("#BirthDate").val();
+        var DepartmentID = $("#DepartmentID").val();
+        var FatherName = $("#FatherName").val();
+        var MotherName = $("#MotherName").val();
+        var PresentAddress = $("#PresentAddress").val();
+        var PermanentAddress = $("#PermanentAddress").val();
+        var Phone = $("#Phone").val();
+        var Email = $("#Email").val();
+        var Sex = $("#Sex").val();
+        var Nationality = $("#Nationality").val();
+        var Religion = $("#Religion").val();
+        var password = $("#Password").val();
+
+        $.ajax({
+
+            type: "put",
+
+            contentType: "application/json;charset=utf-8",
+
+            url: "/WebApi/Categories/" + $("#StudentID").val(),
+
+            data: JSON.stringify({
+
+                StudentID = $("#StudentID").val(),
+                FirstName = $("#FirstName").val(),
+                LastName = $("#LastName").val(),
+                BirthDate = $("#BirthDate").val(),
+                DepartmentID = $("#DepartmentID").val(),
+                FatherName = $("#FatherName").val(),
+                MotherName = $("#MotherName").val(),
+                PresentAddress = $("#PresentAddress").val(),
+                PermanentAddress = $("#PermanentAddress").val(),
+                Phone = $("#Phone").val(),
+                Email = $("#Email").val(),
+                Sex = $("#Sex").val(),
+                Nationality = $("#Nationality").val(),
+                Religion = $("#Religion").val(),
+                password = $("#Password").val(),
+
+
+
+
+
+
+            }),
+
+            dataType: "JSON",
+
+            success: function (data) {
+                $("#tab2").find("tr:gt(0)").remove();
+                $.getJSON("/WebApi/Categories/", function (data) {
+                    $("#tab2").css("display", "block");
+                    $.each(data, function (key, val) {
+                        $("<tr><td>" + val.id + "</td><td>" + val.name + "</td><td>" + val.price + "</td><td>" + val.quantity + "</td><td>" + val.category + "</td></tr>").appendTo($("#tab2"));
+
+
+
+                    })
+
+                })
+
+
+
+            }
+        });
+
+
+    })
+    });
+
+</script>
+

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<DIUB.Models.Tbl_Request>
+
+@{
+    ViewBag.Title = "Request";
+    Layout = "~/Views/Shared/_LibraryLayout.cshtml";
+}
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BorrowDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequestID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BorrowDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeacherID)
+        </td>
+        <td>
+            @Html.ActionLink("Confirm", "ConfirmRequest", new { id=item.RequestID}) |
+            
+            @Html.ActionLink("Cancel", "Delete", new { id = item.RequestID })
+        </td>
+    </tr>
+}
+
+</table>

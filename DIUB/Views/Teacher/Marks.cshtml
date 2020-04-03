@@ -1,0 +1,322 @@
+﻿@model IEnumerable<DIUB.Models.Tbl_MidResult>
+
+@{
+    ViewBag.Title = "Marks";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<hr />
+<center><h3>Midterm Result</h3></center>
+<hr />
+
+<table class="table">
+    <tr>
+
+
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+
+        <th>
+            Subject
+        </th>
+        <th>
+            Attendance
+        </th>
+        <th>
+            Performance
+        </th>
+        <th>
+            Lab
+        </th>
+        <th>
+            Quiz1
+        </th>
+        <th>
+            Quiz2
+        </th>
+        <th>
+            Quiz3
+        </th>
+        <th>
+            QuizTotal
+        </th>
+        <th>
+            Final
+        </th>
+        <th>
+            Total
+        </th>
+        <th>
+            Grade
+        </th>
+        <th>
+            Semester
+        </th>
+        <th>
+           
+        </th>
+
+
+
+
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_Student.FirstName) @Html.DisplayFor(modelItem => item.Tbl_Student.LastName)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_SubjectDetails.SubjectName)-@Html.DisplayFor(modelItem => item.Tbl_SectionDistribution.SectionName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AttandanceMid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PerformanceMid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LabPerformanceMid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quiz1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quiz2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quiz3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuizMid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MidFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalMarksMid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GradeMid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_Semester.SemesterName)
+            </td>
+
+
+
+
+
+
+            <td>
+                @Html.ActionLink("Update", "MarkUploadMid", new { resultID = item.ResultID }) |
+               
+            </td>
+        </tr>
+    }
+
+</table>
+<hr />
+<center><h3>Finalterm Result</h3></center>
+<hr />
+<table class="table">
+    <tr>
+
+
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+
+        <th>
+            Subject
+        </th>
+        <th>
+            Attendance
+        </th>
+        <th>
+            Performance
+        </th>
+        <th>
+            Lab
+        </th>
+        <th>
+            Quiz1
+        </th>
+        <th>
+            Quiz2
+        </th>
+        <th>
+            Quiz3
+        </th>
+        <th>
+            QuizTotal
+        </th>
+        <th>
+            Final
+        </th>
+        <th>
+            Total
+        </th>
+        <th>
+            Grade
+        </th>
+        <th>
+            Semester
+        </th>
+        <th>
+            
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_Student.FirstName) @Html.DisplayFor(modelItem => item.Tbl_Student.LastName)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_SubjectDetails.SubjectName)-@Html.DisplayFor(modelItem => item.Tbl_SectionDistribution.SectionName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AttendanceFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PerformanceFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LabPerformanceFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quiz4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quiz5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quiz6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuizFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalMarksFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GradeFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_Semester.SemesterName)
+            </td>
+            <td>
+                @Html.ActionLink("Update", "MarkUploadMid", new { resultID = item.ResultID }) |
+              
+            </td>
+        </tr>
+    }
+</table>
+<hr />
+<center><h3> Result</h3></center>
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+
+        <th>
+            Subject
+        </th>
+        <th>
+            Mid Term Marks
+        </th>
+        <th>
+            Grade
+        </th>
+        <th>
+            FinalTerm Marks
+        </th>
+        <th>
+            Grade
+        </th>
+        <th>
+            Total Marks
+        </th>
+        <th>
+            Grade
+        </th>
+        <th>
+            Semester
+        </th>
+        <th>
+            
+        </th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_Student.FirstName) @Html.DisplayFor(modelItem => item.Tbl_Student.LastName)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_SubjectDetails.SubjectName)-@Html.DisplayFor(modelItem => item.Tbl_SectionDistribution.SectionName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalMarksMid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GradeMid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalMarksFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GradeFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalMarks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_Semester.SemesterName)
+            </td>
+            <td>
+                @Html.ActionLink("Update", "MarkUploadMid", new { resultID = item.ResultID }) |
+               
+            </td>
+        </tr>
+    }
+</table>
+

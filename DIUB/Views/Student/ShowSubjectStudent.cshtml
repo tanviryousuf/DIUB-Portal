@@ -1,0 +1,71 @@
+﻿
+@model DIUB.Models.Tbl_SectionDistribution
+
+@{
+    ViewBag.Title = "ShowSubjectStudent";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+
+
+<div>
+   
+    <hr />
+     
+    <div class="col">
+        <table class="table">
+            <tr>
+
+
+                <th>
+                    Day
+                </th>
+                <th>
+                    Time
+                </th>
+
+
+                <th>
+                    Day
+                </th>
+                <th>
+                    Time
+                </th>
+                <th>
+                    Room
+                </th>
+
+                <th></th>
+            </tr>
+
+            
+                <tr>
+
+                   
+                    <td>
+                        @Html.DisplayFor(model => model.Day1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.ClassStart)- @Html.DisplayFor(model => model.ClassEnd)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => model.Day2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.ClassStart2)- @Html.DisplayFor(model => model.ClassEnd2)
+                    </td>
+
+                   
+
+                </tr>
+            
+
+        </table>
+    </div>
+  </div>
+  <div class="row">
+   
+  </div>
+
+

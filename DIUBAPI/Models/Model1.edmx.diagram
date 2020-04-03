@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9103653e6dfd48fcab768905a1790e82" Name="Diagram1" ZoomLevel="21">
+        <EntityTypeShape EntityType="DIUBDatabaseModel.SemesterRecord" PointX="9.75" PointY="70" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_Accounts1" PointX="2.75" PointY="0.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_AttandanceFinal" PointX="18" PointY="46.375" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_AttandanceMid" PointX="15" PointY="46.375" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_Book" PointX="3" PointY="48.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_Borrow" PointX="5.25" PointY="41.5" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_Category" PointX="0.75" PointY="49.375" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_Department" PointX="5.25" PointY="48.625" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_Employee1" PointX="7.5" PointY="45.25" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_Expense" PointX="2.75" PointY="3.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_Message" PointX="0.75" PointY="3.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_MidResult" PointX="15" PointY="53.875" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_Notes" PointX="9.75" PointY="54.875" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_Notices" PointX="8.25" PointY="42.125" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_PerSemesterRecord" PointX="12.75" PointY="48.625" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_PreEmployee" PointX="7.5" PointY="53.875" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_PreSectionDistribution" PointX="9.75" PointY="58.5" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_PreStudent" PointX="7.5" PointY="63.125" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_PreSubjectDetails" PointX="7.5" PointY="60.25" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_PreTeacher" PointX="10.5" PointY="44.375" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_Registration" PointX="21" PointY="46.875" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_Request" PointX="0.75" PointY="0.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_SalaryCategory" PointX="0.75" PointY="42.125" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_SectionDistribution" PointX="12.75" PointY="53" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_Semester" PointX="10.5" PointY="65.5" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_SemesterCost" PointX="12.75" PointY="42.625" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_Student" PointX="3" PointY="30.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_SubjectDetails" PointX="7.5" PointY="69.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DIUBDatabaseModel.Tbl_Teacher1" PointX="3" PointY="39.5" Width="1.5" IsExpanded="true" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_SemesterRecord_Student" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_SemesterRecord_Tbl_Semester" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_SemesterRecord_Tbl_SubjectDetails" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_AttandanceFinal_Tbl_Section" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_AttandanceFinal_Tbl_Semester" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_AttandanceFinal_Tbl_Student" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_AttandanceFinal_Tbl_Teacher" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_AttandanceMid_Tbl_Section" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_AttandanceMid_Tbl_Semester" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_AttandanceMid_Tbl_Student" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_AttandanceMid_Tbl_Teacher1" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Book_Tbl_Category" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Borrow_Tbl_Book" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Borrow_Tbl_Student" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Borrow_Tbl_Teacher1" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Department_Tbl_Teacher1" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Employee1_Tbl_Department" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_PreEmployee_Tbl_Department" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_PreSectionDistribution_Tbl_Department" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_PreStudent_Tbl_Department" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_PreSubjectDetails_Tbl_Department" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_PreTeacher_Tbl_Department" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_SectionDistribution_Tbl_Department" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_SubjectDetails_Tbl_Department" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Teacher1_Tbl_Department" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Employee1_Tbl_SalaryCategory" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_MidResult_Tbl_Section" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_MidResult_Tbl_Semester" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_MidResult_Tbl_Student" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_MidResult_Tbl_Subject" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_MidResult_Tbl_Teacher1" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Notes_Tbl_Section" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Notes_Tbl_Subject" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Notes_Tbl_Teacher" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Notices_Tbl_Section" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Notices_Tbl_Teacher1" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_PerSemesterRecord_Tbl_Semester" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_PerSemesterRecord_Tbl_Student" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_PreSectionDistribution_Tbl_Semester" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_PreSectionDistribution_Tbl_SubjectDetails" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_PreSectionDistribution_Tbl_Teacher1" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_PreTeacher_Tbl_SalaryCatagory" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Registration_Tbl_Section" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Registration_Tbl_Semester" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Registration_Tbl_Student" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Registration_Tbl_Teacher" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_Teacher1_Tbl_SalaryCategory" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_SectionDistribution_Tbl_Semester" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_SectionDistribution_Tbl_SubjectDetails" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_SectionDistribution_Tbl_Teacher1" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_SemesterCost_Tbl_Semester" />
+        <AssociationConnector ManuallyRouted="false" Association="DIUBDatabaseModel.FK_Tbl_SemesterCost_Tbl_Studenet" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

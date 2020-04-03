@@ -1,0 +1,119 @@
+﻿@model IEnumerable<DIUB.Models.Tbl_PreSectionDistribution>
+
+@{
+    ViewBag.Title = "SectionConfirm";
+    Layout = "~/Views/Shared/_DirectorLayout.cshtml";
+}
+
+<h2>SectionConfirm</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.SectionName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_SubjectDetails.SubjectName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Day1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassStart)-@Html.DisplayNameFor(model => model.ClassEnd)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.Day2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassStart2)- @Html.DisplayNameFor(model => model.ClassEnd2)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_Semester.SemesterName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_Department.DepartmentName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Available)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Credit)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_Teacher1.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomNo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.SectionName)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Tbl_SubjectDetails.SubjectName)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Day1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassStart)- @Html.DisplayFor(modelItem => item.ClassEnd)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Day2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassStart2)-@Html.DisplayFor(modelItem => item.ClassEnd2)
+        </td>
+      
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Tbl_Semester.SemesterName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tbl_Department.DepartmentName)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Available)/ @Html.DisplayFor(modelItem => item.Capacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Credit)
+        </td>
+      
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Tbl_Teacher1.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomNo)
+        </td>
+        <td>
+            @Html.ActionLink("Confirm", "ConfirmSection", new { id = item.SectionID }) |
+            @Html.ActionLink("Details", "SectionDetails", new { id = item.SectionID }) |
+            @Html.ActionLink("Cancel", "CancelSection", new { id = item.SectionID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,59 @@
+﻿@model DIUB.Models.Tbl_PreSubjectDetails
+
+@{
+    ViewBag.Title = "SubjectDetails";
+    Layout = "~/Views/Shared/_DirectorLayout.cshtml";
+}
+
+<h2>SubjectDetails</h2>
+
+<div>
+    <h4>Tbl_SubjectDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SubjectID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubjectID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubjectName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubjectName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Credit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartmentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartmentID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsLabExist)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsLabExist)
+        </dd>
+
+    </dl>
+</div>
+<p>
+   
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,94 @@
+﻿@model IEnumerable<DIUB.Models.Tbl_MidResult>
+
+@{
+    ViewBag.Title = "MarksPerSubject";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+<hr />
+<h4>Midterm Result</h4>
+<hr />
+
+<table class="table">
+    <tr>
+
+        <th>
+            Teacher
+        </th>
+
+        <th>
+            Subject
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.AttandanceMid)
+        </th>
+        <th>
+            Lab
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuizMid)
+        </th>
+        <th>
+            Performance
+        </th>
+        <th>
+            Final
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalMarksMid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GradeMid)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_Semester.SemesterName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_Teacher1.FirstName)-@Html.DisplayFor(modelItem => item.Tbl_Teacher1.LastName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_SubjectDetails.SubjectName)-@Html.DisplayFor(modelItem => item.Tbl_SectionDistribution.SectionName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.AttandanceMid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LabPerformanceMid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuizMid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PerformanceMid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MidFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalMarksMid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GradeMid)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_Semester.SemesterName)
+            </td>
+            <td>
+                @Html.ActionLink("Upload Lab Task", "UploadLabTask", new { id = item.ResultID })
+
+            </td>
+        </tr>
+    }
+
+</table>
